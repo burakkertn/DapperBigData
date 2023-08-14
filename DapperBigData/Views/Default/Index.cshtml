@@ -1,0 +1,140 @@
+﻿@model List<DapperBigData.DAL.Plates>
+@{
+    Layout = null;
+}
+
+
+
+<br />
+<br />
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaka Verileri</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: white;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Button Styles */
+        .ozel-dugme {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .ozel-dugme:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5 class="mt-4">Fake Araba Verileri</h5>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card bg-primary">
+                    <h5 class="card-header">En Fazla Olan Plaka</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">İstanbul | @ViewData["plateMax"] --  @ViewData["countMaxPlate"]</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-success">
+                    <h5 class="card-header">En Az Olan Plaka</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Ardahan | @ViewData["plateMin"] --  @ViewData["countMinPlate"]</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-warning">
+                    <h5 class="card-header">En Çok Tercih Edilen Vites</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["shiftType"] -- @ViewData["shiftTypeCount"]</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Fazla Olan Araç Markası</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["brandMax"] -- @ViewData["countMaxBrand"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-danger">
+                    <h5 class="card-header">En Az Olan Araç Markası</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["brandMin"] -- @ViewData["countMinBrand"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-info">
+                    <h5 class="card-header">En Fazla Tercih Edilen Yakıt Türü</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["fuelType"] -- @ViewData["fuelTypeCount"]</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-info">
+                    <h5 class="card-header">En Fazla Tercih Edilen Renk</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["colorType"] -- @ViewData["colorTypeCount"]</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <a href="/Search/Index" class="ozel-dugme">Ara</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

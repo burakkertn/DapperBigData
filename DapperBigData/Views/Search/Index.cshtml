@@ -1,0 +1,41 @@
+﻿@using DapperBigData.DAL;
+@model IEnumerable<Plates>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<br />
+<div style="Display: flex;
+Align-items: center;
+Justify-content: center;">
+<form method="get" action="@Url.Action("Index")">
+    <label for="searchString">Marka Ara:</label>
+    <input type="text" id="searchString" name="searchString" />
+    <button type="submit">Ara</button>
+</form>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marka</th>
+
+            <th>Renk</th>
+            <th>Vites Türü</th>
+            <th>Yakıt Tipi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BRAND</td>
+                <td>@item.COLOR</td>
+                <td>@item.SHIFTTYPE</td>
+                <td>@item.FUEL</td>
+            </tr>
+        }
+    </tbody>
+</table>
